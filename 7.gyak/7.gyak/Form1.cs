@@ -19,7 +19,6 @@ namespace _7.gyak
             InitializeComponent();
 
             label1.Text = Resource1.FullName;
-            label2.Text = Resource1.FirstName;
             button1.Text = Resource1.Add;
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
