@@ -25,6 +25,7 @@ namespace _7.gyak
             listBox1.ValueMember = "ID";
             listBox1.DisplayMember = "FullName";
             button2.Text = Resource1.WriteFile;
+            button3.Text = Resource1.Delete;
 
         }
 
@@ -50,6 +51,12 @@ namespace _7.gyak
                 }
                 sr.Close();
             }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            users.Remove((User)listBox1.SelectedItem);
+            listBox1.Refresh();
         }
     }
 }
