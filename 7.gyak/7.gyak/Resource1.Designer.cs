@@ -70,7 +70,7 @@ namespace _7.gyak {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kerestnév.
+        ///   Looks up a localized string similar to Utónév.
         /// </summary>
         internal static string FirstName {
             get {
