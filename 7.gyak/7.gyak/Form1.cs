@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _7.gyak.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace _7.gyak
 {
     public partial class Form1 : Form
     {
+        BindingList<User> users = new BindingList<User>();
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +21,20 @@ namespace _7.gyak
             label1.Text = Resource1.LastName;
             label2.Text = Resource1.FirstName;
             button1.Text = Resource1.Add;
+            listBox1.DataSource = users;
+            listBox1.ValueMember = "ID";
+            listBox1.DisplayMember = "FullName";
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            User newUser = new User()
+            {
+                LastName = textBox1.Text,
+                FirstName = textBox2.Text
+            };
+            users.Add(newUser);
         }
     }
 }
