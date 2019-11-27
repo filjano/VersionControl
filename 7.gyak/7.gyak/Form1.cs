@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace _7.gyak
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
             listBox1.DisplayMember = "FullName";
+            button2.Text = Resource1.WriteFile;
 
         }
 
@@ -30,10 +32,24 @@ namespace _7.gyak
         {
             User newUser = new User()
             {
-                FullName= textBox1.Text+
-                " "+ textBox2.Text
+                FullName= textBox1.Text
             };
             users.Add(newUser);
+        }
+
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter sr = new StreamWriter(sfd.FileName);
+                foreach (var item in users)
+                {
+                    sr.WriteLine(item.FullName);
+                }
+                sr.Close();
+            }
         }
     }
 }

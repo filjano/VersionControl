@@ -77,5 +77,14 @@ namespace _7.gyak {
                 return ResourceManager.GetString("FullName", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fájlba írás.
+        /// </summary>
+        internal static string WriteFile {
+            get {
+                return ResourceManager.GetString("WriteFile", resourceCulture);
+            }
+        }
     }
 }
